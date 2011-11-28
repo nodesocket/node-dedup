@@ -28,6 +28,9 @@ var path = require('path');
 // dedup
 ////
 var dedup = module.exports = {
+	//Verion of node-dedup
+	version: '0.0.1',
+
 	//Base directory path to start working from
 	base: null,
 
@@ -282,6 +285,10 @@ if(typeof process.argv[2] === "undefined") {
 }
 //argv[2] is set
 else {
-	//Call init, passing argv[2] as the base directory path
-	dedup.init(process.argv[2]);	
+	if(process.argv[2] === '-v' || process.argv[2] === '--version' ) {
+		console.log(dedup.version);
+	} else {
+		//Call init, passing argv[2] as the base directory path
+		dedup.init(process.argv[2]);	
+	}	
 }

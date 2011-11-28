@@ -3,7 +3,11 @@ node-dedup
 
 ### Performs a poor man's deduplication recursively on a directory. Deletes duplicate files, and creates symbolic links in their place.
 
-### WARNING: BE VERY CAREFUL. NODE-DEDUP IS STILL UNDER DEVELOPMENT, AND THINGS CAN GO VERY WRONG, VERY QUICKLY IF YOUR NOT CAREFUL. WE RECOMMEND, SETTING UP A TEST ENVORINMENT AT FIRST, AND MANUALLY COPYING FILES INTO THE TEST BED. RUNNING NODE-DEDUP ON YOUR ENTIRE DISK, WOULD PROBABLY BE A VERY BAD IDEA.
+### WARNING 
+
+#### BE VERY CAREFUL. NODE-DEDUP IS STILL UNDER DEVELOPMENT, AND THINGS CAN GO VERY WRONG, VERY QUICKLY IF YOUR NOT CAREFUL. WE RECOMMEND, SETTING UP A TEST ENVIRONMENT AT FIRST, AND MANUALLY COPYING FILES INTO THE TEST ENVIRONMENT TO EXPLORE. RUNNING NODE-DEDUP ON YOUR ENTIRE DISK, WOULD PROBABLY BE A VERY BAD IDEA. 
+
+#### ONCE AGAIN, NODE-DEDUP DELETES THINGS, SO BE CAREFUL.
 
 About
 ========
@@ -25,12 +29,15 @@ How To Use It
 
 ![alt node-dedup](http://i.imgur.com/Svc2S.png "node-dedup")
 
+     $ node dedup.js -v
+     0.0.1
+
 Database
 =========
 
-**node-dedup** keeps a basic json database log file of every deduplication performed. The name of the file is the UNIX timestamp and .json extension. The database file provides exactly what files link to what in case you ever need to manually revert. In the future, we would like to build the ability for node-dedup to read a database file, and undo the duplication; i.e. delete the symbolic link, and create a copy of the file it points too.
+**node-dedup** keeps a basic json database log file of every deduplication performed. The name of the file is the UNIX timestamp and .json extension. The database file provides exactly what files link to what in case you ever need to manually revert. In the future, we would like to build the ability for node-dedup to read a database log file, and undo the duplication; i.e. delete the symbolic links, and create copies of the files.
 
-**Example database file:**
+**Example database log file:**
 
     [
         {
@@ -49,3 +56,17 @@ Database
             "linksto": null
         }
     ]
+
+
+To Do
+===========
+
+ *    The file listing should sort by **date modifed desc**, instead of name, that way the newest file modified gets linked too
+ *    Buffer overflow with a lot of files
+ *    Somehow cache hashes, instead of calculating them everytime
+ *    Read in a database file, and 'undo' a node-dedup; i.e. remove symbolic link and copy back
+ *    Move from flat .json files as the database to Redis or MongoDB
+
+Change Log / Version History
+===========
+0.0.1 (11/28/2011)
