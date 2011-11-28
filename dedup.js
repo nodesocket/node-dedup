@@ -1,12 +1,6 @@
 /**
  * node-dedup.js
  *
- * @todo
- *		The file listing should sort by date modifed desc, instead of name, that way the newest file modified gets linked too
- *		Buffer overflow, with a lot of files
- *		Somehow cache hashes, instead of calculating them everytime
- *		Read in a database file, and 'undo' a node-dedup; i.e. remove symbolic link and copy back.
- *
  * @version 0.0.1
  * @date last modified 11/28/2011
  * @author NodeSocket <http://www.nodesocket.com> <hello@nodesocket.com>

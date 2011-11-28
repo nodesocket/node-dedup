@@ -74,3 +74,11 @@ Change Log / Version History
 ===========
 
 *     0.0.1 (11/28/2011)
+
+NodeSocket
+============
+
+Created and coded by the **NodeSocket** team.
+(c) 2011 NodeSocket. All Rights Reserved.
+_NodeSocket: <http://www.nodesocket.com>_
+_Twitter: <http://www.twitter.com/nodesocket>_
