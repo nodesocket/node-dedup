@@ -34,7 +34,7 @@ var dedup = module.exports = {
 	//Base directory path to start working from
 	base: null,
 
-	//Array of objects; each object contains a hash, path, and linksto
+	//Array of objects; each object contains a hash, path, and link
 	files: [],
 
 	////
@@ -142,7 +142,7 @@ var dedup = module.exports = {
 				dedup.files.push({
 					hash: this.hash.digest('hex'),
 					path: this.path,
-					linksto: null
+					link: null
 				});
 
 				//Increment counter
@@ -241,8 +241,8 @@ var dedup = module.exports = {
 					if(p_err) {
 						logger.log(p_err.message, 'error');	
 					} else {
-						//Update p_delete linksto to p_keep's path
-						p_delete.linksto = p_keep.path;
+						//Update p_delete link to p_keep's path
+						p_delete.link = p_keep.path;
 
 						//Call the callback, if it exists
 						typeof p_callback === "function" ? p_callback.call() : null;	
