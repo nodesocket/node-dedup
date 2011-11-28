@@ -1,12 +1,16 @@
+node-dedup
+===========
+
+
 About
 ========
 
-**node-dedup** performs a poor mans deduplication on a directory recursively. It loops through starting at a base directory and constructs a *SHA256* hash for each file *(excluding .DS_Store files and node-dedup-db)*. It then sorts all the hashs, and if a hash exists more than once, it deletes the duplicates and creates a symbolic links in its place.
+**node-dedup** performs a poor mans deduplication on a directory recursively. It loops through starting at a base directory and constructs a *SHA256* hash for each file *(excluding .DS_Store files and node-dedup-db directories)*. It then sorts all the hashs, and if a hash exists more than once, it deletes the duplicate files and creates a symbolic link in its place.
 
 Why
 ========
 
-Surprinsgly, we have lots of duplicate files on our systems, and we were looking for a solution to search and find duplicates and symlink them instead of having maultiple copies. Some example use cases are music libaries, documents, and pictures.
+Surprisingly, we have lots of duplicate files on our systems, and we were looking for a solution to search and find duplicates and symlink them instead of having multiple copies. Some example use cases are music libraries, documents, and pictures.
 
 
 How To Use
@@ -15,7 +19,7 @@ How To Use
 **From the command line:**
 <code>$ node dedup.js /some/path</code>
 
-http://i.imgur.com/Svc2S.png
+![alt node-dedup](http://i.imgur.com/Svc2S.png "node-dedup")
 
 Node-DeDup Database
 =========
