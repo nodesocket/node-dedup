@@ -1,7 +1,7 @@
 About
 ========
 
-*node-dedup* performs a poor mans deduplication on a directory recursively. It loop through starting at a base directory and constructs a *SHA256* hash for each file **(excluding .DS_Store files and node-dedup-db)**. It then sorts all the hashs, and if a hash exists more than once, it deletes the duplicates and creates a symbolic links in its place.
+**node-dedup** performs a poor mans deduplication on a directory recursively. It loops through starting at a base directory and constructs a *SHA256* hash for each file *(excluding .DS_Store files and node-dedup-db)*. It then sorts all the hashs, and if a hash exists more than once, it deletes the duplicates and creates a symbolic links in its place.
 
 Why
 ========
