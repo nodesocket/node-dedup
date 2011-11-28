@@ -3,6 +3,8 @@ node-dedup
 
 ### Performs a poor man's deduplication recursively on a directory. Deletes duplicate files, and creates symbolic links in their place.
 
+![alt node-dedup Diagram](http://i.imgur.com/RYFcp.png "node-dedup Diagram")
+
 About
 ========
 
@@ -78,10 +80,10 @@ Change Log / Version History
 NodeSocket
 ============
 
-Created and coded by the **NodeSocket** team.s
-
-(c) 2011 NodeSocket. All Rights Reserved.
+Created and coded by the **NodeSocket** team.
 
 _Website: <http://www.nodesocket.com>_
 
 _Twitter: <http://www.twitter.com/nodesocket>_
+
+(c) 2011 NodeSocket. All Rights Reserved.
