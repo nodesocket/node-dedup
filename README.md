@@ -1,12 +1,12 @@
 node-dedup
 ===========
 
-### Performs a poor man's deduplication recursively on a directory. Deletes duplicate files, and creates symbolic links in their place.
+### Performs a poor man's file deduplication recursively on a directory. Deletes duplicate files, and creates symbolic links in their place.
 
 About
 ========
 
-**node-dedup** performs a *poor* mans deduplication on a base directory and recursively walks down. It loops through starting at the base directory and constructs a *SHA256* hash for each file *(excluding .DS_Store files and node-dedup-db directories)*. It then sorts all the hashs, and if a hash exists more than once, it deletes the duplicate files and creates a symbolic link in its place.
+**node-dedup** performs a *poor* mans file deduplication on a base directory and recursively walks down. It loops through starting at the base directory and constructs a *SHA256* hash for each file *(excluding .DS_Store files and node-dedup-db directories)*. It then sorts all the hashs, and if a hash exists more than once, it deletes the duplicate files and creates a symbolic link in its place.
 
 ![alt node-dedup Diagram](http://i.imgur.com/RYFcp.png "node-dedup Diagram")
 
@@ -25,7 +25,9 @@ How To Use It
 Why
 ========
 
-Surprisingly, we have lots of duplicate files on our systems, and we were looking for a solution to search and find duplicates and symlink them instead of having multiple copies wasting disk space. Some example use cases are music libraries, documents, and pictures.
+Surprisingly, we have lots of duplicate files on our systems, and we were looking for a solution to search and find duplicates and symlink them instead of having multiple copies wasting disk space.
+
+**Some example use cases are music libraries, documents, pictures, and videos.**
 
 
 Warning
