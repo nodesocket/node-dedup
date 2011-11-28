@@ -3,6 +3,8 @@ node-dedup
 
 ### Performs a poor man's deduplication recursively on a directory. Deletes duplicate files, and creates symbolic links in their place.
 
+### WARNING: BE VERY CAREFUL. NODE-DEDUP IS STILL UNDER DEVELOPMENT, AND THINGS CAN GO VERY WRONG, VERY QUICKLY IF YOUR NOT CAREFUL. WE RECOMMEND, SETTING UP A TEST ENVORINMENT AT FIRST, AND MANUALLY COPYING FILES INTO THE TEST BED. RUNNING NODE-DEDUP ON YOUR ENTIRE DISK, WOULD PROBABLY BE A VERY BAD IDEA.
+
 About
 ========
 
@@ -26,7 +28,7 @@ How To Use It
 Database
 =========
 
-**node-dedup** keeps a basic json log file of every deduplication performed. The name of the file is the UNIX timestamp and .json extension. The database file provides exactly what files link to what, in case you ever need to manually revert. In the future, would like to build the ability for node-dedup to read a database file, and undo the duplication; delete the symbolic link, and create a copy of the file it points too.
+**node-dedup** keeps a basic json database log file of every deduplication performed. The name of the file is the UNIX timestamp and .json extension. The database file provides exactly what files link to what in case you ever need to manually revert. In the future, we would like to build the ability for node-dedup to read a database file, and undo the duplication; i.e. delete the symbolic link, and create a copy of the file it points too.
 
 **Example database file:**
 
@@ -46,4 +48,4 @@ Database
             "path": "/test/photo.jpg",
             "linksto": null
         }
-]
+    ]
