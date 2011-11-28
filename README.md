@@ -3,12 +3,12 @@ node-dedup
 
 ### Performs a poor man's deduplication recursively on a directory. Deletes duplicate files, and creates symbolic links in their place.
 
-![alt node-dedup Diagram](http://i.imgur.com/RYFcp.png "node-dedup Diagram")
-
 About
 ========
 
 **node-dedup** performs a poor mans deduplication on a directory recursively. It loops through starting at a base directory and constructs a *SHA256* hash for each file *(excluding .DS_Store files and node-dedup-db directories)*. It then sorts all the hashs, and if a hash exists more than once, it deletes the duplicate files and creates a symbolic link in its place.
+
+![alt node-dedup Diagram](http://i.imgur.com/RYFcp.png "node-dedup Diagram")
 
 Why
 ========
