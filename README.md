@@ -23,27 +23,27 @@ How To Use It
 
 ![alt node-dedup](http://i.imgur.com/Svc2S.png "node-dedup")
 
-Node-DeDup Database
+Database
 =========
 
-*node-dedup* keeps a basic json log file of every deduplication performed. The name of the file is the UNIX timestamp and .json extension. The database file provides exactly what files link to what, in case you ever need to manually revert. In the future, would like to build the ability for node-dedup to read a database file, and undo the duplication; i.e. delete the symbolic link, and create a copy of the file it points too.
+**node-dedup** keeps a basic json log file of every deduplication performed. The name of the file is the UNIX timestamp and .json extension. The database file provides exactly what files link to what, in case you ever need to manually revert. In the future, would like to build the ability for node-dedup to read a database file, and undo the duplication; delete the symbolic link, and create a copy of the file it points too.
 
-Example database file:
+**Example database file:**
 
-[
-    {
-        "hash": "7fb5225ffd276e2d4ef537d61a610b681d8f1d90eca100a0d41f3dea450c5e87",
-        "path": "/test/sf-bridge-1.jpg",
-        "linksto": null
-    },
-    {
-        "hash": "7fb5225ffd276e2d4ef537d61a610b681d8f1d90eca100a0d41f3dea450c5e87",
-        "path": "/test/sf-bridge-2.jpg",
-        "linksto": "/Users//test/sf-bridge-1.jpg"
-    },
-    {
-        "hash": "c651458681c4dd5dd636e6e20c704955d981435be90b19357dc0636b02601d9a",
-        "path": "/test/photo.jpg",
-        "linksto": null
-    }
+    [
+        {
+            "hash": "7fb5225ffd276e2d4ef537d61a610b681d8f1d90eca100a0d41f3dea450c5e87",
+            "path": "/test/sf-bridge-1.jpg",
+            "linksto": null
+        },
+        {
+            "hash": "7fb5225ffd276e2d4ef537d61a610b681d8f1d90eca100a0d41f3dea450c5e87",
+            "path": "/test/sf-bridge-2.jpg",
+            "linksto": "/Users//test/sf-bridge-1.jpg"
+        },
+        {
+            "hash": "c651458681c4dd5dd636e6e20c704955d981435be90b19357dc0636b02601d9a",
+            "path": "/test/photo.jpg",
+            "linksto": null
+        }
 ]
