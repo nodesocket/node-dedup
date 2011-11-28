@@ -1,5 +1,6 @@
 node-dedup
 ===========
+### By NodeSocket
 
 ### Performs a poor man's deduplication recursively on a directory. Deletes duplicate files, and creates symbolic links in their place.
 
