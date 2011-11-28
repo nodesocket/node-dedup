@@ -3,12 +3,6 @@ node-dedup
 
 ### Performs a poor man's deduplication recursively on a directory. Deletes duplicate files, and creates symbolic links in their place.
 
-### WARNING 
-
-#### BE VERY CAREFUL. NODE-DEDUP IS STILL UNDER DEVELOPMENT, AND THINGS CAN GO VERY WRONG, VERY QUICKLY IF YOUR NOT CAREFUL. WE RECOMMEND, SETTING UP A TEST ENVIRONMENT AT FIRST, AND MANUALLY COPYING FILES INTO THE TEST ENVIRONMENT TO EXPLORE. RUNNING NODE-DEDUP ON YOUR ENTIRE DISK, WOULD PROBABLY BE A VERY BAD IDEA. 
-
-#### ONCE AGAIN, NODE-DEDUP DELETES THINGS, SO BE CAREFUL.
-
 About
 ========
 
@@ -20,6 +14,15 @@ Why
 Surprisingly, we have lots of duplicate files on our systems, and we were looking for a solution to search and find duplicates and symlink them instead of having multiple copies. Some example use cases are music libraries, documents, and pictures.
 
 
+Warning
+========= 
+
+#### BE VERY CAREFUL. NODE-DEDUP IS STILL UNDER DEVELOPMENT, AND THINGS CAN GO VERY WRONG, VERY QUICKLY IF YOUR NOT CAREFUL. WE RECOMMEND, SETTING UP A TEST ENVIRONMENT AT FIRST, AND MANUALLY COPYING FILES INTO THE TEST ENVIRONMENT TO EXPLORE. RUNNING NODE-DEDUP ON YOUR ENTIRE DISK, WOULD PROBABLY BE A VERY BAD IDEA. 
+
+
+#### ONCE AGAIN, NODE-DEDUP DELETES THINGS, SO BE CAREFUL.
+
+
 How To Use It
 ========
 
@@ -29,8 +32,8 @@ How To Use It
 
 ![alt node-dedup](http://i.imgur.com/Svc2S.png "node-dedup")
 
-     $ node dedup.js -v
-     0.0.1
+     $ node dedup.js --version
+       0.0.1
 
 Database
 =========
@@ -43,17 +46,17 @@ Database
         {
             "hash": "7fb5225ffd276e2d4ef537d61a610b681d8f1d90eca100a0d41f3dea450c5e87",
             "path": "/test/sf-bridge-1.jpg",
-            "linksto": null
+            "link": null
         },
         {
             "hash": "7fb5225ffd276e2d4ef537d61a610b681d8f1d90eca100a0d41f3dea450c5e87",
             "path": "/test/sf-bridge-2.jpg",
-            "linksto": "/Users//test/sf-bridge-1.jpg"
+            "link": "/Users//test/sf-bridge-1.jpg"
         },
         {
             "hash": "c651458681c4dd5dd636e6e20c704955d981435be90b19357dc0636b02601d9a",
             "path": "/test/photo.jpg",
-            "linksto": null
+            "link": null
         }
     ]
 
@@ -61,12 +64,13 @@ Database
 To Do
 ===========
 
- *    The file listing should sort by **date modifed desc**, instead of name, that way the newest file modified gets linked too
+ *    The file listing should sort by **date modified desc**, instead of name, that way the newest file modified gets linked too
  *    Buffer overflow with a lot of files
- *    Somehow cache hashes, instead of calculating them everytime
- *    Read in a database file, and 'undo' a node-dedup; i.e. remove symbolic link and copy back
+ *    Somehow cache hashes, instead of calculating them everytime (slow)
+ *    Read in a database file, and 'undo' a node-dedup; i.e. remove symbolic links and copy back
  *    Move from flat .json files as the database to Redis or MongoDB
 
 Change Log / Version History
 ===========
-0.0.1 (11/28/2011)
+
+*     0.0.1 (11/28/2011)
