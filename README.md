@@ -1,8 +1,7 @@
 node-dedup
 ===========
 
-Performs a poor man's deduplication recursively on a directory. Deletes duplicate files, and creates symbolic links in their place.
------------------------------------------------------------------------------------------------------------------------------------
+### Performs a poor man's deduplication recursively on a directory. Deletes duplicate files, and creates symbolic links in their place.
 
 About
 ========
@@ -15,11 +14,12 @@ Why
 Surprisingly, we have lots of duplicate files on our systems, and we were looking for a solution to search and find duplicates and symlink them instead of having multiple copies. Some example use cases are music libraries, documents, and pictures.
 
 
-How To Use
+How To Use It
 ========
 
 **From the command line:**
-<code>$ node dedup.js /some/path</code>
+
+     $ node dedup.js /some/path
 
 ![alt node-dedup](http://i.imgur.com/Svc2S.png "node-dedup")
 
