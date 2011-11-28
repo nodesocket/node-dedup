@@ -255,13 +255,15 @@ var dedup = module.exports = {
 	writeDatabaseFile: function() {
 		var db_file_name = Math.round((new Date()).getTime() / 1000) + '.json';
 
-		logger.log("\n\tWriting database file '" + db_file_name + "' to database directory '" + dedup.base + "/node-dedup-db'", 'notice');
+		logger.log("\n\tNotice: Writing database file '" + db_file_name + "' to database directory '" + dedup.base + "/node-dedup-db'", 'notice');
 
 		//Write the database file in base directory path with the filename being UNIX timestamp.json
 		fs.writeFile(dedup.base + "/node-dedup-db/" + db_file_name, JSON.stringify(dedup.files), 'utf8', function(p_err) {
 			if(p_err) {
 				logger.log(p_err.message, 'error');	
 			} else {
+				logger.log("Complete!", 'info');
+
 				//Exit nicely
 				process.exit(0);
 			}
