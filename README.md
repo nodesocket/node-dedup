@@ -15,12 +15,12 @@ Surprisingly, we have lots of duplicate files on our systems, and we were lookin
 
 
 Warning
-========= 
+============
 
-#### BE VERY CAREFUL. NODE-DEDUP IS STILL UNDER DEVELOPMENT, AND THINGS CAN GO VERY WRONG, VERY QUICKLY IF YOUR NOT CAREFUL. WE RECOMMEND, SETTING UP A TEST ENVIRONMENT AT FIRST, AND MANUALLY COPYING FILES INTO THE TEST ENVIRONMENT TO EXPLORE. RUNNING NODE-DEDUP ON YOUR ENTIRE DISK, WOULD PROBABLY BE A VERY BAD IDEA. 
+**BE VERY CAREFUL. NODE-DEDUP IS STILL UNDER DEVELOPMENT, AND THINGS CAN GO VERY WRONG, VERY QUICKLY IF YOUR NOT CAREFUL. WE RECOMMEND, SETTING UP A TEST ENVIRONMENT AT FIRST, AND MANUALLY COPYING FILES INTO THE TEST ENVIRONMENT TO EXPLORE. RUNNING NODE-DEDUP ON YOUR ENTIRE DISK, WOULD PROBABLY BE A VERY BAD IDEA.**
 
 
-#### ONCE AGAIN, NODE-DEDUP DELETES THINGS, SO BE CAREFUL.
+**ONCE AGAIN, NODE-DEDUP DELETES THINGS, SO BE CAREFUL.**
 
 
 How To Use It
@@ -78,7 +78,10 @@ Change Log / Version History
 NodeSocket
 ============
 
-Created and coded by the **NodeSocket** team.
+Created and coded by the **NodeSocket** team.s
+
 (c) 2011 NodeSocket. All Rights Reserved.
-_NodeSocket: <http://www.nodesocket.com>_
+
+_Website: <http://www.nodesocket.com>_
+
 _Twitter: <http://www.twitter.com/nodesocket>_
