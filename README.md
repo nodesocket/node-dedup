@@ -55,7 +55,7 @@ Database
         {
             "hash": "7fb5225ffd276e2d4ef537d61a610b681d8f1d90eca100a0d41f3dea450c5e87",
             "path": "/test/sf-bridge-2.jpg",
-            "link": "/Users//test/sf-bridge-1.jpg"
+            "link": "/test/sf-bridge-1.jpg"
         },
         {
             "hash": "c651458681c4dd5dd636e6e20c704955d981435be90b19357dc0636b02601d9a",
