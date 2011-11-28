@@ -10,7 +10,7 @@ About
 
 ![alt node-dedup Diagram](http://i.imgur.com/RYFcp.png "node-dedup Diagram")
 
-How To Use It
+How To Use
 ========
 
 **From the command line:**
