@@ -150,7 +150,7 @@ var dedup = module.exports = {
 		}
 
 		//Loop through file paths
-		for(var i = 0; i < 5000; i++) {
+		for(var i = 0; i < p_paths.length; i++) {
 			var hash = crypto.createHash('sha256');
 			var stream = fs.ReadStream(p_paths[i]);
 			
