@@ -8,8 +8,6 @@ About
 
 **node-dedup** performs a *poor* mans file deduplication on a base directory and recursively walks down. It loops through starting at the base directory and constructs a *SHA256* hash for each file *(excluding .DS_Store files and node-dedup-db directories)*. It then sorts all the hashs, and if a hash exists more than once, it deletes the duplicate files and creates a symbolic link in its place.
 
-![alt node-dedup Diagram](http://i.imgur.com/RYFcp.png "node-dedup Diagram")
-
 How To Use
 ========
 
@@ -17,26 +15,28 @@ How To Use
 
      $ node dedup.js /some/path/here
 
-![alt node-dedup](http://i.imgur.com/Svc2S.png "node-dedup")
+![alt node-dedup](http://i.imgur.com/UnWY7.png "node-dedup")
+
+     $ node dedup.js /some/path/here --dryrun
+
+![alt node-dedup-dryrun](http://i.imgur.com/460CJ.png "node-dedup-dryrun")
 
      $ node dedup.js --version
-       0.0.1
+       0.0.2
+
 
 Why
 ========
 
 Surprisingly, we have lots of duplicate files on our systems, and we were looking for a solution to search and find duplicates and symlink them instead of having multiple copies wasting disk space.
 
-**Some example use cases are music libraries, documents, pictures, and videos.**
+**Some example use cases are music libraries, pictures, and videos. Static content that inst changed often makes the most sense.**
 
 
 Warning
 ============
 
-**BE VERY CAREFUL. NODE-DEDUP IS STILL UNDER DEVELOPMENT, AND THINGS CAN GO VERY WRONG, VERY QUICKLY IF YOUR NOT CAREFUL. WE RECOMMEND, SETTING UP A TEST ENVIRONMENT AT FIRST, AND MANUALLY COPYING FILES INTO THE TEST ENVIRONMENT TO EXPLORE. RUNNING NODE-DEDUP ON YOUR ENTIRE DISK, WOULD PROBABLY BE A VERY BAD IDEA.**
-
-
-**ONCE AGAIN, NODE-DEDUP IS RECURSIVE AND DELETES THINGS, SO BE CAREFUL.**
+**BE VERY CAREFUL. NODE-DEDUP IS STILL UNDER DEVELOPMENT, AND THINGS CAN GO VERY WRONG, VERY QUICKLY IF YOUR NOT CAREFUL. WE RECOMMEND, EITHER SETTING UP A TEST ENVIRONMENT AT FIRST, AND MANUALLY COPYING FILES INTO THE TEST ENVIRONMENT OR RUNNING NODE-DEDUP IN DRY-RUN MODE. RUNNING NODE-DEDUP ON YOUR ENTIRE DISK, WOULD PROBABLY BE A VERY BAD IDEA.**
 
 
 Database
@@ -48,20 +48,20 @@ Database
 
     [
         {
-            "hash": "7fb5225ffd276e2d4ef537d61a610b681d8f1d90eca100a0d41f3dea450c5e87",
-            "path": "/test/sf-bridge-1.jpg",
-            "link": null
+            "hash": "b8a434ad9deddbb2bb246e0e403fdca3a8ca0a67e052a6583cdfa68d2965a344",
+            "path": "/Users/justin/test/vegas-1.jpg",
+            "linksto": null
         },
         {
-            "hash": "7fb5225ffd276e2d4ef537d61a610b681d8f1d90eca100a0d41f3dea450c5e87",
-            "path": "/test/sf-bridge-2.jpg",
-            "link": "/test/sf-bridge-1.jpg"
+            "hash": "b8a434ad9deddbb2bb246e0e403fdca3a8ca0a67e052a6583cdfa68d2965a344",
+            "path": "/Users/justin/test/vegas-2.jpg",
+            "linksto": "/Users/justin/test/vegas-1.jpg"
         },
         {
-            "hash": "c651458681c4dd5dd636e6e20c704955d981435be90b19357dc0636b02601d9a",
-            "path": "/test/photo.jpg",
-            "link": null
-        }
+            "hash": "b8a434ad9deddbb2bb246e0e403fdca3a8ca0a67e052a6583cdfa68d2965a344",
+            "path": "/Users/justin/test/vegas-3.jpg",
+            "linksto": "/Users/justin/test/vegas-1.jpg"
+       }
     ]
 
 
@@ -76,6 +76,11 @@ To Do
 
 Change Log / Version History
 ===========
+
+*     0.0.2 (12/01/2011)
+          + Added flag '--dryrun' which does not delete files and create symbolic links. Great for testing.
+          * Modified database structure, changed 'link' property to 'linksto' for clearification.
+          * Improved logging to screen to show number of files read and number of files deduplciated.
 
 *     0.0.1 (11/28/2011)
 
