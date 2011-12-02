@@ -78,7 +78,7 @@ Change Log / Version History
 ===========
 
 *     0.0.2 (12/01/2011)
-          + Added flag '--dryrun' which does not delete files and create symbolic links. Great for testing.
+          + Added flag '--dryrun' which does not delete files and does not create symbolic links. Use for testing.
           * Modified database structure, changed 'link' property to 'linksto' for clearification.
           * Improved logging to screen to show number of files read and number of files deduplciated.
 
