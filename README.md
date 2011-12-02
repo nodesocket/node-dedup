@@ -22,7 +22,7 @@ How To Use
 ![alt node-dedup-dryrun](http://i.imgur.com/460CJ.png "node-dedup-dryrun")
 
      $ node dedup.js --version
-       0.0.2
+       0.0.3
 
 
 Why
@@ -69,13 +69,15 @@ To Do
 ===========
 
  *    The file listing should sort by **date modified desc**, instead of name, that way the newest file modified gets to be link too
- *    Buffer overflow with a lot of files
  *    Somehow cache hashes, instead of calculating them everytime (naughty... slow)
  *    Read in a database file, and 'undo' a node-dedup; i.e. remove symbolic links and copy back files
  *    Move from flat .json files as the database to Redis or MongoDB
 
 Change Log / Version History
 ===========
+
+*     0.0.3 (12/01/2011)
+          + Added option to child.process.exec() { maxBuffer: (200*10240) } which should prevent buffer overflow errors, unless reading a massive amount of files.
 
 *     0.0.2 (12/01/2011)
           + Added flag '--dryrun' which does not delete files and does not create symbolic links. Use for testing.

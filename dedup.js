@@ -1,7 +1,7 @@
 /**
  * node-dedup.js
  *
- * @version 0.0.2
+ * @version 0.0.3
  * @date last modified 12/01/2011
  * @author NodeSocket <http://www.nodesocket.com> <hello@nodesocket.com>
  * @copyright (c) 2011 NodeSocket. All Rights Reserved.
@@ -41,7 +41,7 @@ var path = require('path');
 ////
 var dedup = module.exports = {
 	//Verion of node-dedup
-	version: '0.0.2',
+	version: '0.0.3',
 
 	//Dryrun, don't acutally delete and create the symbolic links, used for testing
 	dryrun: null,
@@ -116,7 +116,7 @@ var dedup = module.exports = {
 		//   It may be faster to use native node and fs.readdir() recursively instead of find. Needs benchmarking.
 		////
 		//Find files, exclude .DS_Store and everything inside node-dedup-db directory
-		exec('find ' + p_base + ' -type f \\( -not -iname ".DS_Store" -and -not -ipath "' + dedup.base + '/node-dedup-db/*" \\) | sort', function(p_err, p_stdout, p_stderr) {
+		exec('find ' + p_base + ' -type f \\( -not -iname ".DS_Store" -and -not -ipath "' + dedup.base + '/node-dedup-db/*" \\) | sort', { maxBuffer: (200*10240) }, function(p_err, p_stdout, p_stderr) {
 			if(p_err) {
 				logger.log(p_err.message, 'error');
 			} else if(p_stderr) {
@@ -150,7 +150,7 @@ var dedup = module.exports = {
 		}
 
 		//Loop through file paths
-		for(var i = 0; i < p_paths.length; i++) {
+		for(var i = 0; i < 5000; i++) {
 			var hash = crypto.createHash('sha256');
 			var stream = fs.ReadStream(p_paths[i]);
 			
